@@ -78,8 +78,8 @@ public class ContrRecuCuenta {
             JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
             mailSender.setHost("smtp.gmail.com");
             mailSender.setPort(587);
-            mailSender.setUsername("superpackingcorpo@gmail.com");
-            mailSender.setPassword("z");
+            mailSender.setUsername("superpackingempres@gmail.com");
+            mailSender.setPassword("afvkliygvymauphg");
 
             Properties props = mailSender.getJavaMailProperties();
             props.put("mail.transport.protocol", "smtp");
