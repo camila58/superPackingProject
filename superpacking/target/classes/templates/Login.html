@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+</head>
+<body background="..\imagenes\empaque.jpg">
+    <div class="modal-dialog text-center">
+        <div class="col-sm-8">
+            <div class="modal-content">
+                <div>
+                    <label >Iniciar Sesión</label>
+                </div>
+                <div class="12">
+                    <div th:if="${error==true}">
+                        <div class="alert alert-danger" role="alert">
+                            Usuario o contraseña incorrectas. Intentalo nuevamente.
+                        </div>
+                    </div>
+                </div>
+                <form class="col-12" th:action="login" method="post" th:object="${usuario}">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Correo" th:name="correo" required>
+                    </div>
+                    <div>
+                        <input type="password" class="form-control" placeholder="contraseña"  th:name="contra" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                </form>
+                <div class="col-12">
+                    <a href="/cuenta/recuperar">Recordar Contraseña</a>
+                </div>
+                <div class="col-12">
+                    <a  href="/registro/regis">Registrarse</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Los iconos tipo Solid de Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Nuestro css-->
+    <link rel="stylesheet"type="text/css"href="static/css/index.css">
+
+</body>
+</html>

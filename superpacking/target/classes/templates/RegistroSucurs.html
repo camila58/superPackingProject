@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>RegistroSucursal</title>
+</head>
+<body>
+<div class="modal-dialog text-center">
+    <div class="col-sm-8 col md-8 col-lg-8 col-xl-8">
+        <div class="modal-content">
+            <div class="col-12">
+                <form method="post">
+                    <div>
+                        <div class="form-group row">
+                            <label for="inputDireSucu" class="col-sm-2 col-form-label">dirección Sucursal</label>
+                            <div class="col-sm-10">
+                                <input type="text" th:name="direccion" class="form-control" id="inputDireSucu" placeholder="DireccionSucursal" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputDireSucu" class="col-sm-2 col-form-label">Superercado que pertenece</label>
+                            <div class="col-sm-10">
+                                <input type="text" th:name="superPertene" class="form-control" id="inputSupeerPertene" placeholder="Supermercado" required>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button type="sumblit" class="btn btn-primary mb-2">Enviar</button>
+                </form>
+                <form>
+
+                 </form>
+            </div>
+            </div>
+        <div>
+            <table>
+                <thead>
+                <tr>
+                    <th> Dirección</th>
+                    <th> Supermercado Que Pertenece</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="sucural: ${sucursales}">
+                    <th th:text="${sucursal.nombre}"></th>
+                    <select th:name="supermercado">
+                        <option th:each="super: ${supermercados}"th:value="${super}" th:text="${super.nombre}"></option>
+
+                    </select>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        </div>
+
+    </div>
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!--FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Los iconos tipo Solid de Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Nuestro css-->
+    <link rel="stylesheet"type="text/css"href="static/css/index.css">
+</div>
+</body>
+</html>
